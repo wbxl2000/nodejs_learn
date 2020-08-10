@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+    <script src="js/leon.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
+    <title>Dawnking 的博客</title>
+</head>
+<body>
+<!--头部-->
+<header></header>
+
+<!--导航栏-->
+<nav>
+    <!--        <span class="nav-logo"> Danking 的博客 </span>-->
+    <canvas id="nav-logo"></canvas>
+    <a href="register.html" class="nav-href">注册</a>
+    <a href="about.html" class="nav-href">关于</a>
+    <a href="articleList.html" class="nav-href">文章</a>
+    <a href="index.html" class="nav-href">首页</a>
+</nav>
+
+<!--main-->
+
+<div id='stars' class="star"></div>
+<div id='stars2' class="star"></div>
+<div id='stars3' class="star"></div>
+
+<div id="content">
+    <div class="blocks">
+        <div class="article-name">
+            <span><a href="article001.html">山大日记 单片机暑期课程参加者 亓龙雨</a> </span>
+        </div>
+        <div class="article-time">
+            <span class="article-logo">时间</span>
+            <span>2020-07-26 </span>
+            &nbsp;&nbsp;&nbsp;
+            <span class="article-logo">观看数</span>
+            <span>102 </span>
+            &nbsp;&nbsp;&nbsp;
+            <span class="article-logo">评论数</span>
+            <span>0 </span>
+        </div>
+        <HR style="FILTER:alpha(opacity=100,finishopacity=0,style=2)" width="100%" color=#987cb9 SIZE=1>
+        <div>
+            <p>
+                今天是暑期课程开设的第六天，刚刚结束了五天的连轴转，做完工作的夜晚，我伏于案前，沉静与反思这五天的暑期课程给我带来了什么。<br>
+
+                我的专业是计算机科学与技术，在6月末终于完成了一个学期的学习计划，开启了2020年的暑假生活。作为一名普通的大学生，对于今年的暑假，我照例开始列暑期计划，想好自己怎样才能利用这大块的、奢侈的2个月时间为未来的路作好铺垫。我都想好了应该做什么、怎样做、做到什么程度，但奇怪的是，行动力总是差那么一丁点，就那么一丁点，一丁点便让时间蹉跎了5天，仿佛每个大学生心里总有一个小角色在想着要把考试周错过的娱乐给补回来，而小角色说：“我想补一个暑假。”
+
+                <br>7月6日，我在考试周前报名的暑期课程——单片机开课了。说起这门课，它既不属于我们计算机的专业课，甚至也不会对下学期的课程产生什么重要的作用，但是我还是决定报名参加。在经历了5天的学习之后，它唤起了我的一些记忆片段。
+
+                <br>我记得在大约初中的时候，我便喜欢拆卸和研究各种废旧的电路板（比如老旧电话、玩具机器人），当时会直接把各种小部件从板上扭下来，用几节家里的干电池加一些不知哪里的边边角角的线连接在一起。有的时候小部件会亮，有的时候会发烫，我最喜欢能够发亮的“小灯”了，我还发现了它只能按照“顺序”才能点亮的秘密。当然，当时也不知道这就是单向导通的发光二极管，但是单凭十几岁孩子眼里的光与压制不住表现出来的开心便可以支撑整个暑假，那或许是最单纯的兴趣爱好了。于是我突然发现，一个人能够做某些决定并不是完全没有道理的，它可能来源于你在某次夜晚的突发奇想，来源于你一次羡慕的眼神。一件事情的价值可能不会立马体现，但价值回归是迟早的事，或许这就是人生的美妙与魅力吧。
+
+                <br>那么，暑期课程到底给我带来了什么呢？我想，这给我带来了一份期待已久的热爱，我一直相信人的心中总会有一团火苗，火苗的作用不仅是点燃自己，更重要的还可以照亮别人，对于我来说，单片机暑期课程便是我心中的那份火苗，悠闲而规律的暑假让它充分燃烧，而且也给我带来了学习其他知识的热情与动力。
+
+                <br>此外，我觉得它还带来了坚定的信心，规律的生活让人充满自信，每一个阶段都有每一个阶段的方向，相信你所坚信的，最终才能带着内心坚定的目标、积极的心态，以及那份热爱勇敢前行。
+
+
+            </p>
+        </div>
+    </article>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</body>
+
+</html>
+
+<style>
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        overflow: scroll;
+        outline: 0;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+        background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+        background-size: 100%;
+        font-family: "思源宋体";
+    }
+
+    }
+</style>
+
+<script>
+    let leon, canvas, ctx;
+
+    const sw = 600;
+    const sh = 50;
+    const pixelRatio = 2;
+
+    function init() {
+        canvas = document.getElementById('nav-logo');
+        ctx = canvas.getContext("2d");
+
+        canvas.width = sw * pixelRatio;
+        canvas.height = sh * pixelRatio;
+        canvas.style.width = sw + 'px';
+        canvas.style.height = sh + 'px';
+        ctx.scale(pixelRatio, pixelRatio);
+
+        leon = new LeonSans({
+            text: 'Dawnking\'s Blog',
+            color: ['#000000'],
+            size: 35,
+            weight: 200
+        });
+
+        requestAnimationFrame(animate);
+    }
+
+    function animate(t) {
+        requestAnimationFrame(animate);
+
+        ctx.clearRect(0, 0, sw, sh);
+
+        const x = (sw - leon.rect.w) / 2;
+        const y = (sh - leon.rect.h) / 2;
+        leon.position(x, y);
+
+        leon.draw(ctx);
+    }
+
+    window.onload = () => {
+        init();
+    };
+</script>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+    <script src="js/leon.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
+    <title>Dawnking 的博客</title>
+</head>
+<body>
+<!--头部-->
+<header></header>
+
+<!--导航栏-->
+<nav>
+    <!--        <span class="nav-logo"> Danking 的博客 </span>-->
+    <canvas id="nav-logo"></canvas>
+    <a href="register.html" class="nav-href">注册</a>
+    <a href="about.html" class="nav-href">关于</a>
+    <a href="articleList.html" class="nav-href">文章</a>
+    <a href="index.html" class="nav-href">首页</a>
+</nav>
+
+<!--main-->
+
+<div id='stars' class="star"></div>
+<div id='stars2' class="star"></div>
+<div id='stars3' class="star"></div>
+
+<div id="content">
+    <div class="blocks">
+        <div class="article-name">
+            <span>关于我 </span>
+        </div>
+        <div class="article-time">
+            <span class="article-logo">地点</span>
+            <span>青岛 </span>
+            &nbsp;&nbsp;&nbsp;
+            <span class="article-logo">语言</span>
+            <span>中文 </span>
+            &nbsp;&nbsp;&nbsp;
+            <span class="article-logo">出生</span>
+            <span>2000 </span>
+        </div>
+        <HR style="FILTER:alpha(opacity=100,finishopacity=0,style=2)" width="100%" color=#987cb9 SIZE=1>
+        <div>
+            <p class="article-content">
+                计算机专业在读本科生，喜欢各种新鲜有趣的事物，崇尚自由开源精神；熟悉数据建模与分析，曾获深圳杯国二；
+                热衷计算机和极客精神，高中大学均为极客组织创建者与组织者，曾为黑客马拉松竞赛主办方；算法竞赛学习史，自
+                主招生计算机取向进入大学，熟悉数据结构和算法。前端开发学习者，对于前后端框架有浓厚兴趣。
+            </p>
+            <h3>技能和语言</h3>
+            编程 系统学习过 C++, C, 自学 Python, JavaScript, PHP<br>
+            工具 会使用 SSH, Git, MATLAB, LaTeX<br>
+            网站开发 团队中我使用过 JavaScript, jQuery, nodejs<br>
+              语言 英语 — 四级 517 分读写（流畅），听说（日常交流）
+            <h3>教育背景</h3>
+            至今 <br>山东大学 • 计算机科学与技术学院<br>
+            2018.09 <br>计算机科学与技术专业 • 本科<br>
+            <h3>校园经历</h3>
+              现任山东大学兴趣开放创新平台主席<br>
+              承办山东大学第二届黑客马拉松程序设计竞赛<br>
+              目前正在与伙伴共同开发学院的 bbs 论坛<br>
+            <h3>荣誉奖项</h3>
+              第 15 次 CCF CSP 认证 • 360 分 • 0.86%<br>
+              2019 年第九届“深圳杯”数学建模挑战赛 • 决赛 • 全国二等奖<br>
+              2019 年全国大学生数学建模竞赛 • 省一等奖<br>
+              山东大学青岛校区第三届提案大赛 • 决赛 • 一等奖<br>
+              山东大学 2019 年特长奖学金 • 二等奖<br>
+              山东大学第一届黑客马拉松 • 三等奖<br>
+            <h3>个人项目经历</h3>
+              TicketCat: 大一黑客松期间开发的微信小程序在线票务管理系统<br>
+              openweb: 开发的实验室管理系统 •Jquery 前端 •Laravel 后端<br>
+              MICLOUD-NOTES-BACKUP: 爬虫 + 脚本自用做自动备份的小工具<br>
+              使用 nodejs 后端的 bbs 正在开发中⋯<br>
+            <h3>求职意向</h3>
+              岗位期望：实习生，可独立完成前/后端指定功能的开发，可辅助进行功能规划和交互逻辑设计，接触更多功能的
+            开发，学习前后端方面的新知识<br>
+              时间期望：全职 7-9 月暑假期间<br>
+            <h3>个人期望</h3>
+              我热爱逻辑和自我整理，希望能够通自己的智慧通过代码提升用户体验，做有意义的事情。<br>
+              我喜爱学习，培养超强学习能力和协作力一直是心中所望，想要进入感知优秀的团队氛围，愿意面对挑战性的工
+            作。
+        </div>
+</div>
+
+</div>
+</div>
+
+</div>
+</div>
+
+</body>
+
+</html>
+
+<style>
+    html,
+    body {
+        width: 100%;
+        height: 100%;
+        overflow: scroll;
+        outline: 0;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f0f0;
+        background: radial-gradient(ellipse at bottom, #1b2735 0%, #090a0f 100%);
+        background-size: 100%;
+        font-family: "思源宋体";
+    }
+
+    }
+</style>
+
+<script>
+    let leon, canvas, ctx;
+
+    const sw = 600;
+    const sh = 50;
+    const pixelRatio = 2;
+
+    function init() {
+        canvas = document.getElementById('nav-logo');
+        ctx = canvas.getContext("2d");
+
+        canvas.width = sw * pixelRatio;
+        canvas.height = sh * pixelRatio;
+        canvas.style.width = sw + 'px';
+        canvas.style.height = sh + 'px';
+        ctx.scale(pixelRatio, pixelRatio);
+
+        leon = new LeonSans({
+            text: 'Dawnking\'s Blog',
+            color: ['#000000'],
+            size: 35,
+            weight: 200
+        });
+
+        requestAnimationFrame(animate);
+    }
+
+    function animate(t) {
+        requestAnimationFrame(animate);
+
+        ctx.clearRect(0, 0, sw, sh);
+
+        const x = (sw - leon.rect.w) / 2;
+        const y = (sh - leon.rect.h) / 2;
+        leon.position(x, y);
+
+        leon.draw(ctx);
+    }
+
+    window.onload = () => {
+        init();
+    };
+</script>

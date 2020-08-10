@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+
+    <script src="js/leon.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href='http://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css'>
+
+    <title>Dawnking 的博客</title>
+</head>
+
+<body>
+    <!--头部-->
+        <header> </header>
+
+    <!--导航栏-->
+        <nav>
+    <!--        <span class="nav-logo"> Danking 的博客 </span>-->
+            <canvas id="nav-logo"> </canvas>
+            <a href="register.html" class="nav-href">注册</a>
+            <a href="about.html" class="nav-href">关于</a>
+            <a href="articleList.html" class="nav-href">文章</a>
+            <a href="index.html" class="nav-href">首页</a>
+        </nav>
+
+    <!--main-->
+
+    <div id='stars'></div>
+    <div id='stars2'></div>
+    <div id='stars3'></div>
+    <div id='title'>
+          <span>
+            你我犹如
+          </span>
+        <br>
+        <span>
+            黑夜中的萤火
+          </span>
+        <br>
+        <span>
+            “茕茕孑立,踽踽独行”
+          </span>
+
+    </div>
+
+</body>
+
+</html>
+
+<style>
+</style>
+
+<script>
+    let leon, canvas, ctx;
+
+    const sw = 600;
+    const sh = 50;
+    const pixelRatio = 2;
+
+    function init() {
+        canvas = document.getElementById('nav-logo');
+        ctx = canvas.getContext("2d");
+
+        canvas.width = sw * pixelRatio;
+        canvas.height = sh * pixelRatio;
+        canvas.style.width = sw + 'px';
+        canvas.style.height = sh + 'px';
+        ctx.scale(pixelRatio, pixelRatio);
+
+        leon = new LeonSans({
+            text: 'Dawnking\'s Blog',
+            color: ['#000000'],
+            size: 35,
+            weight: 200
+        });
+
+        requestAnimationFrame(animate);
+    }
+
+    function animate(t) {
+        requestAnimationFrame(animate);
+
+        ctx.clearRect(0, 0, sw, sh);
+
+        const x = (sw - leon.rect.w) / 2;
+        const y = (sh - leon.rect.h) / 2;
+        leon.position(x, y);
+
+        leon.draw(ctx);
+    }
+
+    window.onload = () => {
+        init();
+    };
+</script>
