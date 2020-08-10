@@ -17,14 +17,15 @@ let server =  () => {
         // 扩展res的方法
         changeRes(res);
 
-        let pathname = url.parse(req.url).pathname.replace('/',"");
+        let pathname = url.parse(req.url).pathname;
         // 获取请求类型
         let method = req.method.toLowerCase();
-
+        console.log(pathname);
         if (G['_'+method][pathname]) {
             if (method == "get") {
                 G._get[pathname](req, res);
             } else {
+                console.log(`??`);
                 // post 获取post数据，把它绑定到req.body
                 let postData = '';
                 req.on('data', (chunk) => postData += chunk);
@@ -41,8 +42,14 @@ let server =  () => {
     
     app.get = function(str, cb) {
         // 注册方法
-        G[str] = cb;
+        G._get[str] = cb;
+    }
+    
+    app.post = function(str, cb) {
+        // 注册方法
+        G._post[str] = cb;
         console.log(str);
+        console.log(G._post['/doLogin']);
     }
 
     return app;
